@@ -245,7 +245,7 @@ public class EmployeeDatabase{
      
             enterToContinue();
      
-        }//End of printBSalary
+        }//End of printBySalary
 
         //Waits for user to press Enter to continue
         private static void enterToContinue(){
