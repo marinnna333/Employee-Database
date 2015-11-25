@@ -117,13 +117,13 @@ public class EmployeeDatabase{
             name = input.nextLine();
      
             for (int i = 0; i < emps.length; i++){
-            //Look for name in emps array
+            //Looks for name in emps array
                 if ((emps[i].getName()).equals(name)) {
                     System.out.println(emps[i]);
                     found = true;
                 }
 
-            //Calculate new salary
+            //Calculates new salary
                 if (found == true){
                     salary = emps[i].getSalary();
                     percent =  salary / 10;
@@ -140,7 +140,7 @@ public class EmployeeDatabase{
             enterToContinue();
         }//End of increaseEmpSalary
 
-        //Print out Employee of a certain designation
+        //Prints out Employee of a certain designation
         private static void printByDesignation(Employee[] emps){    
             String designation;
             boolean found = false;
@@ -150,7 +150,7 @@ public class EmployeeDatabase{
             designation = input.nextLine();
      
             for (int i = 0; i < emps.length; i++){
-            //Look for designation in emps array
+            //Looks for designation in emps array
                 if ((emps[i].getDesignation()).equals(designation)) {
                     System.out.println(emps[i]);
                     found = true;
@@ -176,12 +176,12 @@ public class EmployeeDatabase{
             age = input.nextInt();
             
             for (int i = 0; i < emps.length; i++){
-            //Look for age in emps array
+            //Looks for age in emps array
                 if (age == emps[i].getAge()){
                     found = true;
                 }
                 
-            //Calculate years left until retirement
+            //Calculates years left until retirement
                 if (found == true){
                     years = 65 - age;
                     System.out.println("The employee has " + years + " years left to work before retirement.");
@@ -207,7 +207,7 @@ public class EmployeeDatabase{
             age = input.nextInt();
      
             for (int i = 0; i < emps.length; i++){
-            //Look for age in emps array
+            //Looks for age in emps array
                 if (age == emps[i].getAge()){
                     System.out.println(emps[i]);
                     found = true;
@@ -232,7 +232,7 @@ public class EmployeeDatabase{
             salary = input.nextDouble();
      
             for (int i = 0; i < emps.length; i++){
-            //Look for salary in emps array
+            //Looks for salary in emps array
                 if (salary == emps[i].getSalary()){
                     System.out.println(emps[i]);
                     found = true;
