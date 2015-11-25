@@ -1,9 +1,10 @@
+
 import java.util.Scanner;
 
 public class EmployeeDatabase{
     
     public static void main(String[] args){
-        Employee[] employees = {new Employee("David Beckham", 41, "President", 230000.0), new Employee("Helen Pinterest", 41, "Chief Executive", 230000.0), new Employee("Ada Lovelace", 41, "Vice President", 230000.0), new Employee("Edward Bananahead", 41, "President", 230000.0)};
+        Employee[] employees = {new Employee("David Beckham", 41, "President", 230000.0), new Employee("Helen Pinterest", 39, "Chief Executive", 235000.0), new Employee("Ada Lovelace", 45, "Vice President", 230000.0), new Employee("Edward Bananahead", 35, "President", 340000.0)};
         
         boolean running = true;
         int choice;
@@ -50,7 +51,7 @@ public class EmployeeDatabase{
         private static int menuChoice(){
             Scanner input = new Scanner(System.in);
      
-            System.out.println("Choose a number and press Enter: \n");
+            System.out.println("Please choose a number and press Enter: \n");
             System.out.println("********************************************************\n");
             System.out.println("[1] Print employee details");
             System.out.println("[2] Print details of one employee");
@@ -117,12 +118,12 @@ public class EmployeeDatabase{
      
             for (int i = 0; i < emps.length; i++){
             //Look for name in emps array
-            //Calculate new salary
                 if ((emps[i].getName()).equals(name)) {
                     System.out.println(emps[i]);
                     found = true;
                 }
 
+            //Calculate new salary
                 if (found == true){
                     salary = emps[i].getSalary();
                     percent =  salary / 10;
@@ -139,7 +140,7 @@ public class EmployeeDatabase{
             enterToContinue();
         }//End of increaseEmpSalary
 
-        //print out employee of a certain designation
+        //Print out Employee of a certain designation
         private static void printByDesignation(Employee[] emps){    
             String designation;
             boolean found = false;
@@ -166,24 +167,22 @@ public class EmployeeDatabase{
         
         //Prints out years left before retirement
         private static void yearsLeft(Employee[] emps){
-            String name;
             boolean found = false;
             int years;
             int age;
             Scanner input = new Scanner(System.in);
             
-            System.out.println("Enter name of employee about which you would like to know the years left before his retirement:");
-            name = input.nextLine();
+            System.out.println("Enter age of employee about which you would like to know the years left before his retirement:");
+            age = input.nextInt();
             
             for (int i = 0; i < emps.length; i++){
-                //Look for name in emps array
-                if ((emps[i].getName()).equals(name)){
-                    System.out.println(emps[i]);
+            //Look for age in emps array
+                if (age == emps[i].getAge()){
                     found = true;
                 }
                 
+            //Calculate years left until retirement
                 if (found == true){
-                    age = emps[i].getAge();
                     years = 65 - age;
                     System.out.println("The employee has " + years + " years left to work before retirement.");
                 }
@@ -223,7 +222,7 @@ public class EmployeeDatabase{
      
         }//End of printByAge
 
-    //Prints out Employee of specific salary
+        //Prints out Employee of specific salary
         private static void printBySalary(Employee[] emps){
             double salary;
             boolean found = false;
@@ -260,8 +259,3 @@ public class EmployeeDatabase{
             System.out.println("Thank you and goodbye!");
         }
     }
-
-
-
-
-
